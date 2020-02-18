@@ -1,0 +1,1 @@
+# hiraya-coding-standards
