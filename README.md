@@ -10,6 +10,7 @@ You are not forced to religiously follow these standards. However, you are expec
 - There should always be a newline at the end of the file.
 - You must put a trailing comma on the last element of an array.
 - Single responsibility principle must be followed.
+- There should always be a newline before the `return` statement.
 
 ## String literals
 - While it is recommended to use single-quote, be consistent when picking either single-quote or double-quote and stick with it. It is okay to use the other quote on a string to avoid the need to double-backslash escape within the string. 
@@ -18,7 +19,6 @@ You are not forced to religiously follow these standards. However, you are expec
 ### File conventions
 - It is recommended to use 4 spaces instead of tabs as indents.
 - Files must start with `<?php` and you must omit `?>` at the end of file. 
-- There should always be a newline before the "return" statement.
 
 ### Naming conventions
 - Variables and function names should be written in camelCase format.
@@ -26,7 +26,7 @@ You are not forced to religiously follow these standards. However, you are expec
 - Class names should be written in PascalCase.
 
 ### Defining class
-- You must put a newline before "{" in class definitions. Also `extends` and `implements` must be written on the same line as the class name.
+- You must put a newline before `{` in class definitions. Also `extends` and `implements` must be written on the same line as the class name.
 - The `abstract`/`final`/`trait` keywords must come before class definition.
 - You must add an `Abstract` prefix to an abstract class name.
 - You must add an `Interface` suffix to an interface class name.
@@ -61,7 +61,7 @@ trait SomeTrait
 - You must not omit `public`/`private`/`protected` modifiers.
 - You should always explicitly write `public` as the default modifier.
 - The `static` keyword must come after the modifiers.
-- You must not use "var" when defining properties because you can't add modifiers.
+- You must not use `var` when defining properties because you can't add modifiers.
 - You must not define two or more properties in one statement.
 ```php
 class ClassName
