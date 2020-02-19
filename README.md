@@ -17,7 +17,7 @@ You are not forced to religiously follow these standards. However, you are expec
 ## PHP
 ### File conventions
 - It is recommended to use 4 spaces instead of tabs as indents.
-- Files must start with "<?php" and you must omit "?>" at the end of file. 
+- Files must start with `<?php` and you must omit `?>` at the end of file. 
 - There should always be a newline before the "return" statement.
 
 ### Naming conventions
@@ -26,11 +26,11 @@ You are not forced to religiously follow these standards. However, you are expec
 - Class names should be written in PascalCase.
 
 ### Defining class
-- You must put a newline before "{" in class definitions. Also "extends" and "implements" must be written on the same line as the class name.
-- The "abstract"/"final"/"trait" keywords must come before class definition.
-- You must add an "Abstract" prefix to an abstract class name.
-- You must add an "Interface" suffix to an interface class name.
-- You must add a "Trait" suffix to a trait name.
+- You must put a newline before "{" in class definitions. Also `extends` and `implements` must be written on the same line as the class name.
+- The `abstract`/`final`/`trait` keywords must come before class definition.
+- You must add an `Abstract` prefix to an abstract class name.
+- You must add an `Interface` suffix to an interface class name.
+- You must add a `Trait` suffix to a trait name.
 ```php
 class ClassName extends AnotherClassName implements Interface
 {
@@ -58,9 +58,9 @@ trait SomeTrait
 ```
 
 ### Defining properties
-- You must not omit "public"/"private"/"protected" modifiers.
-- You should always explicitly write "public" as the default modifier.
-- The "static" keyword must come after the modifiers.
+- You must not omit `public`/`private`/`protected` modifiers.
+- You should always explicitly write `public` as the default modifier.
+- The `static` keyword must come after the modifiers.
 - You must not use "var" when defining properties because you can't add modifiers.
 - You must not define two or more properties in one statement.
 ```php
@@ -73,14 +73,14 @@ class ClassName
 ```
 
 ### Defining functions/methods
-- You must not omit "public"/"private"/"protected" modifiers.
-- You should always explicitly write "public" as the default modifier.
-- The "abstract"/"final" keywords must come before the modifiers.
-- You must not put any spaces before "(" and after ")".
+- You must not omit `public`/`private`/`protected` modifiers.
+- You should always explicitly write `public` as the default modifier.
+- The `abstract`/`final` keywords must come before the modifiers.
+- You must not put any spaces before `(` and after `)`.
 - You must not put any whitespaces before commands in arguments, put them after instead.
 - You must always use type hinting on arguments to specify the expected data type.
 - When possible, you must declare the return type of a function/method.
-- If there are too many arguments, you must put a newline after "(" and write one argument per line. You should also write ")" and "{" on the same line, seperated by a whitespace.
+- If there are too many arguments, you must put a newline after `(` and write one argument per line. You should also write `)` and `{` on the same line, seperated by a whitespace.
 ```php
 class ClassName
 {
@@ -110,10 +110,10 @@ class ClassName
 
 ### Defining conditional statements
 - You must not put newline before curly braces.
-- You must put one space before "(" and after ")".
-- You must not put any whitespaces after "(" and before ")".
-- If there are too many arguments, you must put a newline after "(" and write one argument per line. You should also write ")" and "{" on the same line, seperated by a whitespace.
-- If there are too many arguments, you must put a newline after "(" and write one argument per line. You should also write ")" and "{" on the same line, seperated by a whitespace.
+- You must put one space before `(` and after `)`.
+- You must not put any whitespaces after `(` and before `)`.
+- If there are too many arguments, you must put a newline after `(` and write one argument per line. You should also write `)` and `{` on the same line, seperated by a whitespace.
+- If there are too many arguments, you must put a newline after `(` and write one argument per line. You should also write `)` and `{` on the same line, seperated by a whitespace.
 ```php
 if ($condition == true) {
 	// Code here...
