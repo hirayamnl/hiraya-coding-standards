@@ -169,8 +169,9 @@ if ($condition == null) {
 - The `master` branch is the default branch and is also a protected branch.
 - The `develop` branch will contain the complete history of the project. This is also the parent branch of all `feature` branches.
 - The `feature` branch will contain the code for each product feature. Each new product feature should reside in its own branch. When a feature is complete, it gets merge back into `develop` branch.
-- The `hotfix` branch will be used to quickly patch production releases, it will branch-out of the `master` branch and be merged back into it and `develop` as soon as the fix is complete.
+- The `hotfix` branch will be used to quickly patch critical bugs in production releases, it will branch-out of the `master` branch and be merged back into it and `develop` as soon as the fix is complete.
 - The `release` branch will branch-out of the `develop` branch once it has acquired enough features for a release. Once it's ready to ship, it will merge into `master` and tagged with a version number and should also be merged back into `develop` if changes occured since the release was initiated.
+- `feature`, `hotfix`, and `release` branches must be deleted right after they are merged to reduce clutter.
 
 ### Naming convention
 - `feature` branches should be have a prefix of `feature/`.
@@ -184,8 +185,12 @@ git checkout -b hotfix/hotfix-name
 git checkout -b release/beta_v1.0.1
 ```
 
-### Commits and Pull Request
+### Commits
 - Commit messages should briefly explain what the changes are.
+- You must follow the "commit small, commit often" practice which makes it easier for everyone to integrate changes regularly and avoid massive merge conflicts.
+- Do not commit half-done work, specially if it's a breaking change.
+
+### Pull Requests
 - Pull Request titles should briefly explain what the PR is for.
 - Pull Request descriptions should include a list of changes included in the PR and other relevant information.
 - You must update your branch and fix merge conflicts on your local machine before creating a Pull Request.
