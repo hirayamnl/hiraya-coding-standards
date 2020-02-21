@@ -35,26 +35,26 @@ You are not forced to religiously follow these standards. However, you are expec
 ```php
 class ClassName extends AnotherClassName implements Interface
 {
-	// Code here...
+    // Code here...
 
-	return $someStuffs;
+    return $someStuffs;
 }
 ...
 abstract class AbstractClassName
 {
-	// Code here...
+    // Code here...
 
-	return $something;
+    return $something;
 }
 ...
 interface ClassNameInterface
 {
-	// Code here...
+    // Code here...
 }
 ...
 trait SomeTrait
 {
-	// Code here...
+    // Code here...
 }
 ```
 
@@ -67,9 +67,9 @@ trait SomeTrait
 ```php
 class ClassName
 {
-	public $propertyOne;
-	private $propertyTwo;
-	protected static $staticProperty;
+    public $propertyOne;
+    private $propertyTwo;
+    protected static $staticProperty;
 }
 ```
 
@@ -85,27 +85,27 @@ class ClassName
 ```php
 class ClassName
 {
-	abstract protected function doSomething(array $data): Array
-	{
-		// Code here...
+    abstract protected function doSomething(array $data): Array
+    {
+        // Code here...
 
-		return $array;
-	}
+        return $array;
+    }
 
-	public function somethingWasDone(string $status, int $code): Class
-	{
-		// Code here...
+    public function somethingWasDone(string $status, int $code): Class
+    {
+        // Code here...
 
-		return $classInstance;
-	}
+        return $classInstance;
+    }
 
-	public function tooMany(
-		string $name,
-		int $status,
-		array $otherData
-	) {
-		// Code here...
-	}
+    public function tooMany(
+        string $name,
+        int $status,
+        array $otherData
+    ) {
+        // Code here...
+    }
 }
 ```
 
@@ -117,15 +117,15 @@ class ClassName
 - If there are too many arguments, you must put a newline after `(` and write one argument per line. You should also write `)` and `{` on the same line, seperated by a whitespace.
 ```php
 if ($condition == true) {
-	// Code here...
+    // Code here...
 }
 ...
 if (
-	$condition == true &&
-	($condition1 == $condition 2) ||
-	$condition3 != 'some condition here'
+    $condition == true &&
+    ($condition1 == $condition 2) ||
+    $condition3 != 'some condition here'
 ) {
-	// Code here...
+    // Code here...
 }
 ```
 
@@ -134,7 +134,7 @@ if (
 ```php
 
 if ($condition == null) {
-	// Code here...
+    // Code here...
 }
 ```
 ### Laravel rules
@@ -145,9 +145,9 @@ if ($condition == null) {
 - Third-party packages in `composer.json` file must have a fixed version number to avoid breaking changes.
 ```json
 {
-	"require": {
-		"vendor/package": "1.10.11"
-	}
+    "require": {
+        "vendor/package": "1.10.11"
+    }
 }
 ```
 
@@ -199,10 +199,10 @@ git checkout -b release/beta_v1.0.1
 - Code review is a must, before every pull request is accepted.
 - Code review must be requested to the Engineering Lead or CTO.
 - During code review, there will be checks including but is not limited to:
-	- Formatting and architecture
-	- Reusability and reliability
-	- Scalability and performance
-	- Security and documentation
+    - Formatting and architecture
+    - Reusability and reliability
+    - Scalability and performance
+    - Security and documentation
 
 ## Testing
 - TODO
