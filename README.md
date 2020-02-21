@@ -3,6 +3,7 @@ Hiraya MNL Engineering Team Coding Standards
 </h1>
 This document is meant to serve as the complete guide of Hiraya MNL Engineering Team’s codebases, covering how the codes should be formatted as well as efficiently using version control. Our goal is to ensure a consistently high-quality codebase that is easy to read and contribute to, especially for newcomers.
 
+
 You are not forced to religiously follow these standards. However, you are expected to at least meet the bare minimum.
 
 ## General
@@ -139,6 +140,17 @@ if ($condition == null) {
 ### Laravel rules
 - You must follow the [rules accepted by the Laravel community](https://github.com/alexeymezenin/laravel-best-practices).
 
+### Composer
+- When installing third-party packages, it should always be the latest version when available.
+- Third-party packages in `composer.json` file must have a fixed version number to avoid breaking changes.
+```json
+{
+	"require": {
+		"vendor/package": "1.10.11"
+	}
+}
+```
+
 ### Other PHP rules
 - For rules that are not mentioned here, please refer to the [PSR-12 Coding Standards](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-12-extended-coding-style-guide.md)
 
@@ -149,7 +161,43 @@ if ($condition == null) {
 - You are to follow [Airbnb CSS Style Guide](https://github.com/airbnb/css)
 
 ## Git
-- TODO
+### Workflow
+- The [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) must be strictly followed.
+- While it's easier to use the `git-flow` library, it's recommended to use vanilla git instead.
+
+### Branches
+- The `master` branch is the default branch and is also a protected branch.
+- The `develop` branch will contain the complete history of the project. This is also the parent branch of all `feature` branches.
+- The `feature` branch will contain the code for each product feature. Each new product feature should reside in its own branch. When a feature is complete, it gets merge back into `develop` branch.
+- The `hotfix` branch will be used to quickly patch production releases, it will branch-out of the `master` branch and be merged back into it and `develop` as soon as the fix is complete.
+- The `release` branch will branch-out of the `develop` branch once it has acquired enough features for a release. Once it's ready to ship, it will merge into `master` and tagged with a version number and should also be merged back into `develop` if changes occured since the release was initiated.
+
+### Naming convention
+- `feature` branches should be have a prefix of `feature/`.
+- `hotfix` branches should have a prefix of `hotfix/`.
+- `release` branches should have a prefix of `release/`.
+- `Alpha` and `Beta` releases must have a prefix of `alpha_` and `beta_`.
+- All versions must have a prefix of `v` (i.e v1.0.1).
+```
+git checkout -b feature/feature-name
+git checkout -b hotfix/hotfix-name
+git checkout -b release/beta_v1.0.1
+```
+
+### Commits and Pull Request
+- Commit messages should briefly explain what the changes are.
+- Pull Request titles should briefly explain what the PR is for.
+- Pull Request descriptions should include a list of changes included in the PR and other relevant information.
+- You must update your branch and fix merge conflicts on your local machine before creating a Pull Request.
+
+### Code Review
+- Code review is a must, before every pull request is accepted.
+- Code review must be requested to the Engineering Lead or CTO.
+- During code review, there will be checks including but is not limited to:
+	- Formatting and architecture
+	- Reusability and reliability
+	- Scalability and performance
+	- Security and documentation
 
 ## Testing
 - TODO
