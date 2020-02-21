@@ -1,8 +1,8 @@
 <h1 align="center">
 Hiraya MNL Engineering Team Coding Standards
 </h1>
-This document is meant to serve as the complete guide of Hiraya MNL Engineering Team’s codebases, covering how the codes should be formatted as well as efficiently using version control. Our goal is to ensure a consistently high-quality codebase that is easy to read and contribute to, especially for newcomers.
 
+This document is meant to serve as the complete guide of Hiraya MNL Engineering Team’s codebases, covering how the codes should be formatted as well as efficiently using version control. Our goal is to ensure a consistently high-quality codebase that is easy to read and contribute to, especially for newcomers.
 
 You are not forced to religiously follow these standards. However, you are expected to at least meet the bare minimum.
 
