@@ -137,6 +137,41 @@ if ($condition == null) {
     // Code here...
 }
 ```
+
+### Commenting/Documenting code
+- Single-line and multi-line comments must start with `/**` and end with `*/`.
+- You must always include a comment on class variables.
+- Refrain from commenting on a function if the function name already explains what the function is for, except for functions in `repository` interfaces.
+- `Repository` interface functions must always have a comment on what the function is for.
+- `Repository` class functions must not have any comments.
+- You must always use `@var` for variable type comments.
+- You must always use `@param` for parameter type in comments.
+- You must always use `@return` for return type in comments.
+- There must always be two whitespaces between `@param` and `data type`.
+- There must always be a short description on each `@param` comments.
+```php
+class ClassName
+{
+    /** @var VariableType */
+    public $classVariable;
+
+    /**
+     * This is the function description where you explain what
+     * the function does.
+     *
+     * @param  Model $id the user's unique id
+     * @param  array $otherData user's other data
+     * @return Array
+     */
+    public function someFunction(Model $id, array $otherData): Array
+    {
+        // Code here...
+
+        return $arrayType;
+    }
+}
+```
+
 ### Laravel rules
 - You must follow the [rules accepted by the Laravel community](https://github.com/alexeymezenin/laravel-best-practices).
 
@@ -179,7 +214,7 @@ if ($condition == null) {
 - `release` branches should have a prefix of `release/`.
 - `Alpha` and `Beta` releases must have a prefix of `alpha_` and `beta_`.
 - All versions must have a prefix of `v` (i.e v1.0.1).
-```
+```sh
 git checkout -b feature/feature-name
 git checkout -b hotfix/hotfix-name
 git checkout -b release/beta_v1.0.1
