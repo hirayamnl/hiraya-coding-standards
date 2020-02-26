@@ -19,11 +19,13 @@ You are not forced to religiously follow these standards. However, you are expec
 ## PHP
 ### File conventions
 - It is recommended to use 4 spaces instead of tabs as indents.
-- Files must start with `<?php` and you must omit `?>` at the end of file. 
+- Files must start with `<?php` and you must omit `?>` at the end of file.
+- There must always be a `namespace` on each file.
+- `namespace` must be written on two newlines after `<?php`
 
 ### Naming conventions
 - Variables and function names should be written in camelCase format.
-- Constant and class variables should be written in UPPER_SNAKE_CASE format.
+- Constants should be written in UPPER_SNAKE_CASE format.
 - Class names should be written in PascalCase.
 
 ### Defining class
