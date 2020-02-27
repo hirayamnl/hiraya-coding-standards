@@ -124,7 +124,7 @@ if ($condition == true) {
 ...
 if (
     $condition == true &&
-    ($condition1 == $condition 2) ||
+    ($condition1 == $condition2) ||
     $condition3 != 'some condition here'
 ) {
     // Code here...
