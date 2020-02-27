@@ -192,7 +192,70 @@ class ClassName
 - For rules that are not mentioned here, please refer to the [PSR-12 Coding Standards](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-12-extended-coding-style-guide.md)
 
 ## JavaScript
-- You are to follow [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+### File conventions
+- It is recommended to use 2 spaces instead of tabs as indents.
+- `import` of modules must always be at the top.
+- `export` statements must always be at the bottom.
+- You must omit `;` as it makes chaining easier and commit diffs cleaner.
+
+### Naming conventions
+- Variables and function names should be written in camelCase format.
+- Constructors and class names should be written in PascalCase format.
+- Acronyms should always be UPPERCASED.
+- `is` or `has` prefix should be used when naming `boolean` type variables.
+- `var` should not be used when defining variables, use `let` or `const` instead.
+
+### Defining class
+- `{` and `extend` keyword must be written on the same line as the class name.
+```js
+class ClassName extends BaseClass {
+  // Code here
+
+  return someVariable
+}
+```
+
+### Defining function/methods 
+- You must not put any spaces before `(` and after `)`.
+- You must not put any whitespaces before commands in arguments, put them after instead.
+- If there are too many arguements, you must put a new line after `(` and write one argument per line. You should also write `)` and `{` on the same line, separated by a whitespace.
+```js
+class ClassName {
+  constructor(name, level) {
+    this.name = name
+    this.level = level
+  }
+
+  someFunction(
+    name,
+    level,
+    status,
+    otherData
+  ) {
+    // Code here
+
+    return someData
+  }
+}
+```
+
+### VueJS
+- For VueJS style guide, please refer to [VueJS Style Guide](https://vuejs.org/v2/style-guide/)
+- For VueJS best practices, please refer to [VueJS Best Practices](https://012.vuejs.org/guide/best-practices.html)
+
+### NPM
+- When installing third-party packages, it should always be the latest version when available.
+- Third-party packages in `package.json` file must have a fixed version number to avoid breaking changes.
+```json
+{
+    "dependencies": {
+        "npm-package": "1.10.11"
+    }
+}
+```
+
+### Other JavaScript rules
+- For rules that are not mentioned here, please refer to [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
 
 ## CSS
 - You are to follow [Airbnb CSS Style Guide](https://github.com/airbnb/css)
