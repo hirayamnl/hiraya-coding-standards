@@ -61,6 +61,7 @@ trait SomeTrait
 ```
 
 ### Defining properties
+- You must put a new line before `{` in function definitions.
 - You must not omit `public`/`private`/`protected` modifiers.
 - You should always explicitly write `public` as the default modifier.
 - The `static` keyword must come after the modifiers.
