@@ -303,7 +303,7 @@ if (condition == null) {
 }
 ```
 
-### VueJS
+### VueJS rules
 - For VueJS style guide, please refer to [VueJS Style Guide](https://vuejs.org/v2/style-guide/)
 - For VueJS best practices, please refer to [VueJS Best Practices](https://012.vuejs.org/guide/best-practices.html)
 
@@ -337,7 +337,7 @@ if (condition == null) {
 - The `release` branch will branch-out of the `develop` branch once it has acquired enough features for a release. Once it's ready to ship, it will merge into `master` and tagged with a version number and should also be merged back into `develop` if changes occured since the release was initiated.
 - `feature`, `hotfix`, and `release` branches must be deleted right after they are merged to reduce clutter.
 
-### Naming convention
+### Naming conventions
 - `feature` branches should be have a prefix of `feature/`.
 - `hotfix` branches should have a prefix of `hotfix/`.
 - `release` branches should have a prefix of `release/`.
@@ -359,7 +359,7 @@ git checkout -b release/beta_v1.0.1
 - Pull Request descriptions should include a list of changes included in the PR and other relevant information.
 - You must update your branch and fix merge conflicts on your local machine before creating a Pull Request.
 
-### Code Review
+### Code Reviews
 - Code review is a must, before every pull request is accepted.
 - Code review must be requested to the Engineering Lead or CTO.
 - During code review, there will be checks including but is not limited to:
