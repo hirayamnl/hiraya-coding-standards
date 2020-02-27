@@ -61,7 +61,6 @@ trait SomeTrait
 ```
 
 ### Defining properties
-- You must put a new line before `{` in function definitions.
 - You must not omit `public`/`private`/`protected` modifiers.
 - You should always explicitly write `public` as the default modifier.
 - The `static` keyword must come after the modifiers.
@@ -77,6 +76,7 @@ class ClassName
 ```
 
 ### Defining functions/methods
+- You must put a new line before `{` in function definitions.
 - You must not omit `public`/`private`/`protected` modifiers.
 - You should always explicitly write `public` as the default modifier.
 - The `abstract`/`final` keywords must come before the modifiers.
