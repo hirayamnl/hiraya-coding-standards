@@ -6,6 +6,14 @@ This document is meant to serve as the complete guide of Hiraya MNL Engineering 
 
 You are not forced to religiously follow these standards. However, you are expected to at least meet the bare minimum.
 
+## Table of Contents
+1. [General](#general)
+2. [String literals](#string-literals)
+3. [PHP](#php)
+    - [File conventions](#file-conventions)
+4. [JavaScript](#javascript)
+    - [File conventions](#file-conventions)
+
 ## General
 - There is no hard limit for line length but the general rule of tab should be less than 120 characters (this is also the limit for Github code review).
 - There should always be a newline at the end of the file.
