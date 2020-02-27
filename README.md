@@ -117,7 +117,6 @@ class ClassName
 - You must put one space before `(` and after `)`.
 - You must not put any whitespaces after `(` and before `)`.
 - If there are too many arguments, you must put a newline after `(` and write one argument per line. You should also write `)` and `{` on the same line, seperated by a whitespace.
-- If there are too many arguments, you must put a newline after `(` and write one argument per line. You should also write `)` and `{` on the same line, seperated by a whitespace.
 ```php
 if ($condition == true) {
     // Code here...
