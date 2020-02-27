@@ -258,6 +258,14 @@ if (
 }
 ```
 
+### Conditional statements comparison
+- You must have the check target of the comparison on the right.
+```js
+if (condition == null) {
+  // Code here...
+}
+```
+
 ### VueJS
 - For VueJS style guide, please refer to [VueJS Style Guide](https://vuejs.org/v2/style-guide/)
 - For VueJS best practices, please refer to [VueJS Best Practices](https://012.vuejs.org/guide/best-practices.html)
