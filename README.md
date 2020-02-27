@@ -239,6 +239,25 @@ class ClassName {
 }
 ```
 
+### Defining conditional statements
+- You must not put newline before curly braces.
+- You must put one space before `(` and after `)`.
+- You must not put any whitespaces after `(` and before `)`.
+- If there are too many arguments, you must put a newline after `(` and write one argument per line. You should also write `)` and `{` on the same line, seperated by a whitespace.
+```js
+if (condition == true) {
+  // Code here...
+}
+...
+if (
+  condition == true &&
+  (condition1 == condition2) ||
+  condition3 != 'some condition here'
+) {
+  // Code here...
+}
+```
+
 ### VueJS
 - For VueJS style guide, please refer to [VueJS Style Guide](https://vuejs.org/v2/style-guide/)
 - For VueJS best practices, please refer to [VueJS Best Practices](https://012.vuejs.org/guide/best-practices.html)
