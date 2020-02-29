@@ -302,6 +302,41 @@ if (condition == null) {
   // Code here...
 }
 ```
+### Commenting/Documenting code
+- Comments with `//` are allowed, however it is recommended to use `/** */` for single-line and multi-line comments instead.
+- Refrain from commenting on a function if the function name already explains what the function is for.
+- Refrain from commenting on client-side JS codes as this helps with code obfuscation.
+- You must always use `@param` for parameter type in comments.
+- You must always use `@return` for return type in comments.
+- There must always be two whitespaces between `@param` and `data type`.
+- `data type` in `@param` and `@return` comments must be enclosed in `{}`, you must not put any whitespace after `{` and before `}`
+- There must always be a short descrption on each `@param` comments.
+```js
+class ClassName {
+  /**
+   * This is the recommended way to document/comment
+   * javascript codes.
+   *
+   * @param  {String} name the user's first name
+   * @param  {Number} level the user's current level
+   * @param  {Boolean} status the user's account status
+   * @return {Array}
+   */
+  someFunction(name, level, status) {
+    // Code here...
+  }
+}
+...
+// This comment is allowed too, but the first one just
+// look more prettier :).
+//
+// @param  {Number} id unique id of the item
+// @param  {Array} moreData other necessary data of the item
+// @return {Array}
+let anotherFunction = function(id, moreData) {
+  // Code here...
+}
+```
 
 ### VueJS rules
 - For VueJS style guide, please refer to [VueJS Style Guide](https://vuejs.org/v2/style-guide/)
