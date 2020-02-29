@@ -494,3 +494,6 @@ SOFTWARE.
 
 **[⬆ back to top](#table-of-contents)**
 
+### Amendments
+We always try to keep our standards high, so if you noticed any errors in this guide such as typos, broken links, etc... or if you have an idea or a suggestion that would make this guide better, feel free to create a pull request with your changes.
+
