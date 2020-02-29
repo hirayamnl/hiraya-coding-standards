@@ -49,21 +49,25 @@ You are not forced to religiously follow these standards. However, you are expec
 - You must put a trailing comma on the last element of an array.
 - Single responsibility principle must be followed.
 - There should always be a newline before the `return` statement.
+**[⬆ back to top](#table-of-contents)**
 
 ## String literals
-- While it is recommended to use single-quote, be consistent when picking either single-quote or double-quote and stick with it. It is okay to use the other quote on a string to avoid the need to double-backslash escape within the string. 
+- While it is recommended to use single-quote, be consistent when picking either single-quote or double-quote and stick with it. It is okay to use the other quote on a string to avoid the need to double-backslash escape within the string.
+**[⬆ back to top](#table-of-contents)**
 
 ## PHP
 ### File conventions
 - It is recommended to use 4 spaces instead of tabs as indents.
 - Files must start with `<?php` and you must omit `?>` at the end of file.
 - There must always be a `namespace` on each file.
-- `namespace` must be written on two newlines after `<?php`
+- `namespace` must be written on two newlines after `<?php`.
+**[⬆ back to top](#table-of-contents)**
 
 ### Naming conventions
 - Variables and function names should be written in camelCase format.
 - Constants should be written in UPPER_SNAKE_CASE format.
 - Class names should be written in PascalCase.
+**[⬆ back to top](#table-of-contents)**
 
 ### Defining class
 - You must put a newline before `{` in class definitions. Also `extends` and `implements` must be written on the same line as the class name.
@@ -96,6 +100,7 @@ trait SomeTrait
     // Code here...
 }
 ```
+**[⬆ back to top](#table-of-contents)**
 
 ### Defining properties
 - You must not omit `public`/`private`/`protected` modifiers.
@@ -111,6 +116,7 @@ class ClassName
     protected static $staticProperty;
 }
 ```
+**[⬆ back to top](#table-of-contents)**
 
 ### Defining functions/methods
 - You must put a new line before `{` in function definitions.
@@ -148,6 +154,7 @@ class ClassName
     }
 }
 ```
+**[⬆ back to top](#table-of-contents)**
 
 ### Defining conditional statements
 - You must not put newline before curly braces.
@@ -167,6 +174,7 @@ if (
     // Code here...
 }
 ```
+**[⬆ back to top](#table-of-contents)**
 
 ### Conditional statements comparison
 - You must have the check target of the comparison on the right.
@@ -176,6 +184,7 @@ if ($condition == null) {
     // Code here...
 }
 ```
+**[⬆ back to top](#table-of-contents)**
 
 ### Commenting/Documenting code
 - Single-line and multi-line comments must start with `/**` and end with `*/`.
@@ -210,9 +219,11 @@ class ClassName
     }
 }
 ```
+**[⬆ back to top](#table-of-contents)**
 
 ### Laravel rules
 - You must follow the [rules accepted by the Laravel community](https://github.com/alexeymezenin/laravel-best-practices).
+**[⬆ back to top](#table-of-contents)**
 
 ### Composer
 - When installing third-party packages, it should always be the latest version when available.
@@ -224,9 +235,11 @@ class ClassName
     }
 }
 ```
+**[⬆ back to top](#table-of-contents)**
 
 ### Other PHP rules
 - For rules that are not mentioned here, please refer to the [PSR-12 Coding Standards](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-12-extended-coding-style-guide.md)
+**[⬆ back to top](#table-of-contents)**
 
 ## JavaScript
 ### File conventions
@@ -234,6 +247,7 @@ class ClassName
 - `import` of modules must always be at the top.
 - `export` statements must always be at the bottom.
 - You must omit `;` as it makes chaining easier and commit diffs cleaner.
+**[⬆ back to top](#table-of-contents)**
 
 ### Naming conventions
 - Variables and function names should be written in camelCase format.
@@ -241,6 +255,7 @@ class ClassName
 - Acronyms should always be UPPERCASED.
 - `is` or `has` prefix should be used when naming `boolean` type variables.
 - `var` should not be used when defining variables, use `let` or `const` instead.
+**[⬆ back to top](#table-of-contents)**
 
 ### Defining class
 - `{` and `extend` keyword must be written on the same line as the class name.
@@ -251,6 +266,7 @@ class ClassName extends BaseClass {
   return someVariable
 }
 ```
+**[⬆ back to top](#table-of-contents)**
 
 ### Defining function/methods 
 - You must not put any spaces before `(` and after `)`.
@@ -275,6 +291,7 @@ class ClassName {
   }
 }
 ```
+**[⬆ back to top](#table-of-contents)**
 
 ### Defining conditional statements
 - You must not put newline before curly braces.
@@ -294,6 +311,7 @@ if (
   // Code here...
 }
 ```
+**[⬆ back to top](#table-of-contents)**
 
 ### Conditional statements comparison
 - You must have the check target of the comparison on the right.
@@ -302,6 +320,8 @@ if (condition == null) {
   // Code here...
 }
 ```
+**[⬆ back to top](#table-of-contents)**
+
 ### Commenting/Documenting code
 - Comments with `//` are allowed, however it is recommended to use `/** */` for single-line and multi-line comments instead.
 - Refrain from commenting on a function if the function name already explains what the function is for.
@@ -337,10 +357,12 @@ let anotherFunction = function(id, moreData) {
   // Code here...
 }
 ```
+**[⬆ back to top](#table-of-contents)**
 
 ### VueJS rules
 - For VueJS style guide, please refer to [VueJS Style Guide](https://vuejs.org/v2/style-guide/)
 - For VueJS best practices, please refer to [VueJS Best Practices](https://012.vuejs.org/guide/best-practices.html)
+**[⬆ back to top](#table-of-contents)**
 
 ### NPM
 - When installing third-party packages, it should always be the latest version when available.
@@ -352,17 +374,21 @@ let anotherFunction = function(id, moreData) {
     }
 }
 ```
+**[⬆ back to top](#table-of-contents)**
 
 ### Other JavaScript rules
 - For rules that are not mentioned here, please refer to [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+**[⬆ back to top](#table-of-contents)**
 
 ## CSS
 - You are to follow [Airbnb CSS Style Guide](https://github.com/airbnb/css)
+**[⬆ back to top](#table-of-contents)**
 
 ## Git
 ### Workflow
 - The [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) must be strictly followed.
 - While it's easier to use the `git-flow` library, it's recommended to use vanilla git instead.
+**[⬆ back to top](#table-of-contents)**
 
 ### Branches
 - The `master` branch is the default branch and is also a protected branch.
@@ -371,6 +397,7 @@ let anotherFunction = function(id, moreData) {
 - The `hotfix` branch will be used to quickly patch critical bugs in production releases, it will branch-out of the `master` branch and be merged back into it and `develop` as soon as the fix is complete.
 - The `release` branch will branch-out of the `develop` branch once it has acquired enough features for a release. Once it's ready to ship, it will merge into `master` and tagged with a version number and should also be merged back into `develop` if changes occured since the release was initiated.
 - `feature`, `hotfix`, and `release` branches must be deleted right after they are merged to reduce clutter.
+**[⬆ back to top](#table-of-contents)**
 
 ### Naming conventions
 - `feature` branches should be have a prefix of `feature/`.
@@ -383,16 +410,19 @@ git checkout -b feature/feature-name
 git checkout -b hotfix/hotfix-name
 git checkout -b release/beta_v1.0.1
 ```
+**[⬆ back to top](#table-of-contents)**
 
 ### Commits
 - Commit messages should briefly explain what the changes are.
 - You must follow the "commit small, commit often" practice which makes it easier for everyone to integrate changes regularly and avoid massive merge conflicts.
 - Do not commit half-done work, specially if it's a breaking change.
+**[⬆ back to top](#table-of-contents)**
 
 ### Pull Requests
 - Pull Request titles should briefly explain what the PR is for.
 - Pull Request descriptions should include a list of changes included in the PR and other relevant information.
 - You must update your branch and fix merge conflicts on your local machine before creating a Pull Request.
+**[⬆ back to top](#table-of-contents)**
 
 ### Code Reviews
 - Code review is a must, before every pull request is accepted.
@@ -402,9 +432,11 @@ git checkout -b release/beta_v1.0.1
     - Reusability and reliability
     - Scalability and performance
     - Security and documentation
+**[⬆ back to top](#table-of-contents)**
 
 ## Testing
 - TODO
+**[⬆ back to top](#table-of-contents)**
 
 ### License
 MIT License
@@ -428,3 +460,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+**[⬆ back to top](#table-of-contents)**
+
