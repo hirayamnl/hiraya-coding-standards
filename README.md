@@ -42,6 +42,7 @@ You are not forced to religiously follow these standards. However, you are expec
     - [Code Reviews](#code-reviews)
 6. [Testing](#testing)
 7. [License](#license)
+8. [Amendments](#amendments)
 
 ## General
 - There is no hard limit for line length but the general rule of tab should be less than 120 characters (this is also the limit for Github code review).
