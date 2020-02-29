@@ -305,7 +305,7 @@ if (condition == null) {
 ### Commenting/Documenting code
 - Comments with `//` are allowed, however it is recommended to use `/** */` for single-line and multi-line comments instead.
 - Refrain from commenting on a function if the function name already explains what the function is for.
-- Refrain from commenting on client-side JS codes as this helps with code obfuscation.
+- Refrain from commenting on client-side JS as this helps with code obfuscation.
 - You must always use `@param` for parameter type in comments.
 - You must always use `@return` for return type in comments.
 - There must always be two whitespaces between `@param` and `data type`.
