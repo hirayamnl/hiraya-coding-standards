@@ -68,7 +68,7 @@ You are not forced to religiously follow these standards. However, you are expec
 **[⬆ back to top](#table-of-contents)**
 
 ### Naming conventions
-- Variables and function names should be written in camelCase format.
+- Variables, function names and parameters should be written in camelCase format.
 - Constants should be written in UPPER_SNAKE_CASE format.
 - Class names should be written in PascalCase.
 
@@ -265,7 +265,7 @@ class ClassName
 **[⬆ back to top](#table-of-contents)**
 
 ### Naming conventions
-- Variables and function names should be written in camelCase format.
+- Variables, function names and parameters should be written in camelCase format.
 - Constructors and class names should be written in PascalCase format.
 - Acronyms should always be UPPERCASED.
 - `is` or `has` prefix should be used when naming `boolean` type variables.
