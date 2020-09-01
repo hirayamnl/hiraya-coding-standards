@@ -32,17 +32,30 @@ You are not forced to religiously follow these standards. However, you are expec
     - [VueJS rules](#vuejs-rules)
     - [NPM](#npm)
     - [Other JavaScript rules](#other-javascript-rules)
-4. [CSS](#css)
-5. [Git](#git)
+4. [Swift](#swift)
+    - [Correctness](#correctness)
+    - [Naming conventions](#naming-conventions-2)
+    - [Language](#language)
+    - [Defining class](#defining-class-2)
+    - [Defining functions](#defining-functions-1)
+    - [Defining conditional statements](#defining-conditional-statements-1)
+    - [Conditional statements](#conditional-statements-1)
+    - [Optionals](#optionals-1)
+    - [Code Organization](#code-organization-1)
+    - [Protocol Conformance](#protocol-conformance-1)
+    - [Spacing](#spacing-1)
+    - [Other Swift Rules](#other-swift-rules-1)
+5. [CSS](#css)
+6. [Git](#git)
     - [Workflow](#workflow)
     - [Branches](#branches)
-    - [Naming conventions](#naming-conventions-2)
+    - [Naming conventions](#naming-conventions-3)
     - [Commits](#commits)
     - [Pull Requests](#pull-requests)
     - [Code Reviews](#code-reviews)
-6. [Testing](#testing)
-7. [License](#license)
-8. [Amendments](#amendments)
+7. [Testing](#testing)
+8. [License](#license)
+9. [Amendments](#amendments)
 
 ## General
 - There is no hard limit for line length but the general rule of tab should be less than 120 characters (this is also the limit for Github code review).
@@ -401,6 +414,327 @@ let anotherFunction = function(id, moreData) {
 
 ### Other JavaScript rules
 - For rules that are not mentioned here, please refer to [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+
+**[⬆ back to top](#table-of-contents)**
+
+## Swift
+
+- These standards apply to Swift 5.0 and later.
+- When using Swift, use Swift 5.0 or higher.
+- Favor readability and clarity above fewer keystrokes.
+
+### Correctness
+- Strive to make your code compile without warnings. This rule informs many style decisions such as using #selector types instead of string literals.
+
+**Preferred**:
+```swift
+NotificationCenter.default.addObserver(self, selector: "updateResult:", name: "updateResult", object: nil)
+```
+
+**Not Preferred**:
+```swift
+NotificationCenter.default.addObserver(self, selector: #selector(InterfaceController.updateResult(_:)), name: "updateResult", object: nil)
+}
+
+```
+
+### Naming conventions
+- Use the Swift naming conventions described in the API Design Guidelines. Some key takeaways include:
+    - using camelCase (not snake_case)
+    - using UpperCamelCase for types and protocols, lowerCamelCase for everything else
+    - using terms that don't surprise experts or confuse beginners
+    - choosing good parameter names that serve as documentation
+```swift
+protocol UserDelegate { 
+}
+
+class User { 
+    let firstName
+    let lastName
+}
+```
+### Language 
+- Use US English spelling to match Apple's API.
+
+**Preferred**:
+```swift
+let color = "red"
+```
+
+**Not Preferred**:
+```swift
+let colour = "red"
+}
+
+```
+
+### Defining class
+
+- Remember, structs have [value semantics](https://developer.apple.com/library/mac/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-XID_144). Use structs for things that do not have an identity. An array that contains [a, b, c] is really the same as another array that contains [a, b, c] and they are completely interchangeable. It doesn't matter whether you use the first array or the second, because they represent the exact same thing. That's why arrays are structs.
+
+- Classes have [reference semantics](https://developer.apple.com/library/mac/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-XID_145). Use classes for things that do have an identity or a specific life cycle. You would model a person as a class because two person objects are two different things. Just because two people have the same name and birthdate, doesn't mean they are the same person. But the person's birthdate would be a struct because a date of 3 March 1950 is the same as any other date object for 3 March 1950. The date itself doesn't have an identity.
+
+- Sometimes, things should be structs but need to conform to `AnyObject` or are historically modeled as classes already (`NSDate`, `NSSet`). Try to follow these guidelines as closely as possible.
+
+#### Example definition
+
+Here's an example of a well-styled class definition:
+
+```swift
+class Circle: Shape {
+  var x: Int, y: Int
+  var radius: Double
+  var diameter: Double {
+    get {
+      return radius * 2
+    }
+    set {
+      radius = newValue / 2
+    }
+  }
+
+  init(x: Int, y: Int, radius: Double) {
+    self.x = x
+    self.y = y
+    self.radius = radius
+  }
+
+  convenience init(x: Int, y: Int, diameter: Double) {
+    self.init(x: x, y: y, radius: diameter / 2)
+  }
+
+  override func area() -> Double {
+    return Double.pi * radius * radius
+  }
+}
+
+extension Circle: CustomStringConvertible {
+  var description: String {
+    return "center = \(centerString) area = \(area())"
+  }
+  private var centerString: String {
+    return "(\(x),\(y))"
+  }
+}
+```
+
+The example above demonstrates the following style guidelines:
+
+ + Specify types for properties, variables, constants, argument declarations and other statements with a space after the colon but not before, e.g. `x: Int`, and `Circle: Shape`.
+ + Define multiple variables and structures on a single line if they share a common purpose / context.
+ + Indent getter and setter definitions and property observers.
+ + Don't add modifiers such as `internal` when they're already the default. Similarly, don't repeat the access modifier when overriding a method.
+ + Organize extra functionality (e.g. printing) in extensions.
+ + Hide non-shared, implementation details such as `centerString` inside the extension using `private` access control.
+
+### Defining functions
+- You must add the opening curly brace inline of the function name
+- Do not add public, becasue public is the default type of a function.
+- You must add private when you want the method to be accessed only inside of the class
+
+```swift
+class User
+{
+    func isValidEmail(email: String) -> Bool {
+        // Code here...
+        var bool: Bool = true
+        return bool;
+    }
+
+    private func isValidEmail(email: String) -> Bool {
+        // Code here...
+        var bool: Bool = true
+        return bool;
+    }
+}
+```
+
+### Defining conditional statements
+- You must add the opening curly brace inline of the function name
+- You must put one space before conditional statement.
+- If you're comparing a boolean property you must not use "== true" statement
+
+**Preferred**:
+```swift
+var emailIsValid: Bool = true
+
+if emailIsValid { 
+
+}
+```
+
+**Not Preferred**:
+```swift
+var emailIsValid: Bool = true
+
+if emailIsValid == true {
+
+}
+
+```
+
+### Conditional statements
+- Use the enumerated() function if you need to loop over a Sequence and use the index:
+```swift
+for (index, element) in someArray.enumerated() {
+    ...
+}
+
+```
+- Use map when transforming Arrays (compactMap for Arrays of Optionals or flatMap for Arrays of Arrays):
+```swift
+let array = [1, 2, 3, 4, 5]
+let stringArray = array.map { item in
+    return "item \(item)"
+}
+
+let optionalArray: [Int?] = [1, nil, 3, 4, nil]
+let nonOptionalArray = optionalArray.compactMap { item -> Int? in
+    guard let item = item else {
+        return nil
+    }
+
+    return item * 2
+}
+
+let arrayOfArrays = [array, nonOptionalArray]
+let anotherStringArray = arrayOfArrays.flatmap { item in
+    return "thing \(item)"
+}
+```
+- If you are not performing a transform, or if there are side effects do not use map/flatmap; use a for in loop instead (tips).
+
+- Avoid the use of forEach except for simple one line closures, similar to makeObjectsPerformSelector: in Objective-C.
+
+### Optionals
+
+- Declare variables and function return types as optional with `?` where a `nil` value is acceptable.
+
+- Use implicitly unwrapped types declared with `!` only for instance variables that you know will be initialized later before use, such as subviews that will be set up in `viewDidLoad()`. Prefer optional binding to implicitly unwrapped optionals in most other cases.
+
+- When accessing an optional value, use optional chaining if the value is only accessed once or if there are many optionals in the chain:
+
+```swift
+textContainer?.textLabel?.setNeedsDisplay()
+```
+
+- Use optional binding when it's more convenient to unwrap once and perform multiple operations:
+
+```swift
+if let textContainer = textContainer {
+  // do many things with textContainer
+}
+```
+
+- When naming optional variables and properties, avoid naming them like `optionalString` or `maybeView` since their optional-ness is already in the type declaration.
+
+- For optional binding, shadow the original name whenever possible rather than using names like `unwrappedView` or `actualLabel`.
+
+**Preferred**:
+```swift
+var subview: UIView?
+var volume: Double?
+
+// later on...
+if let subview = subview, let volume = volume {
+  // do something with unwrapped subview and volume
+}
+
+// another example
+resource.request().onComplete { [weak self] response in
+  guard let self = self else { return }
+  let model = self.updateModel(response)
+  self.updateUI(model)
+}
+```
+
+**Not Preferred**:
+```swift
+var optionalSubview: UIView?
+var volume: Double?
+
+if let unwrappedSubview = optionalSubview {
+  if let realVolume = volume {
+    // do something with unwrappedSubview and realVolume
+  }
+}
+
+// another example
+UIView.animate(withDuration: 2.0) { [weak self] in
+  guard let strongSelf = self else { return }
+  strongSelf.alpha = 1.0
+}
+```
+
+### Code Organization
+- Use extensions to organize your code into logical blocks of functionality. Each extension should be set off with a // MARK: - comment to keep things well-organized.
+
+### Protocol Conformance
+* In particular, when adding protocol conformance to a model, prefer adding a separate extension for the protocol methods. This keeps the related methods grouped together with the protocol and can simplify instructions to add a protocol to a class with its associated methods.
+
+**Preferred**:
+```swift
+
+class MyViewController: UIViewController {
+  // class stuff here
+}
+
+// MARK: - UITableViewDataSource
+extension MyViewController: UITableViewDataSource {
+  // table view data source methods
+}
+
+// MARK: - UIScrollViewDelegate
+extension MyViewController: UIScrollViewDelegate {
+  // scroll view delegate methods
+}
+```
+
+**Not Preferred**:
+```swift
+
+class MyViewController: UIViewController, UITableViewDataSource, UIScrollViewDelegate {
+  // all methods
+}
+
+```
+* Since the compiler does not allow you to re-declare protocol conformance in a derived class, it is not always required to replicate the extension groups of the base class. This is especially true if the derived class is a terminal class and a small number of methods are being overridden. When to preserve the extension groups is left to the discretion of the author.
+
+* For UIKit view controllers, consider grouping lifecycle, custom accessors, and IBAction in separate class extensions.
+
+### Spacing
+
+* Indent using 2 spaces rather than tabs to conserve space and help prevent line wrapping. Be sure to set this preference in Xcode and in the Project settings as shown below:
+
+![Xcode indent settings](screens/indentation.png)
+
+* Method braces and other braces (`if`/`else`/`switch`/`while` etc.) always open on the same line as the statement but close on a new line.
+
+**Preferred**:
+```swift
+class TestDatabase: Database {
+
+  var data: [String: CGFloat] = ["A": 1.2, "B": 3.2]
+  
+}
+```
+
+**Not Preferred**:
+```swift
+class TestDatabase : Database {
+
+  var data :[String:CGFloat] = ["A" : 1.2, "B":3.2]
+  
+}
+```
+* There should be one blank line between methods and up to one blank line between type declarations to aid in visual clarity and organization. Whitespace within methods should separate functionality, but having too many sections in a method often means you should refactor into several methods.
+
+* There should be one blank lines after an opening brace or before a closing brace.
+
+### Other Swift Rules
+* [RaywenderLich](https://github.com/raywenderlich/swift-style-guide/blob/master/README.markdown)
+* [The Swift Programming Language](https://developer.apple.com/library/prerelease/ios/documentation/swift/conceptual/swift_programming_language/index.html)
+* [Swift Standard Library Reference](https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/SwiftStandardLibraryReference/index.html)
 
 **[⬆ back to top](#table-of-contents)**
 
