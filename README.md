@@ -34,9 +34,9 @@ You are not forced to religiously follow these standards. However, you are expec
     - [Other JavaScript rules](#other-javascript-rules)
 4. [Swift](#swift)
     - [Correctness](#correctness)
-    - [Naming conventions](#naming-conventions-1)
+    - [Naming conventions](#naming-conventions-2)
     - [Language](#language)
-    - [Defining class](#defining-class-1)
+    - [Defining class](#defining-class-2)
     - [Defining functions](#defining-functions-1)
     - [Defining conditional statements](#defining-conditional-statements-1)
     - [Conditional statements](#conditional-statements-1)
@@ -49,7 +49,7 @@ You are not forced to religiously follow these standards. However, you are expec
 6. [Git](#git)
     - [Workflow](#workflow)
     - [Branches](#branches)
-    - [Naming conventions](#naming-conventions-2)
+    - [Naming conventions](#naming-conventions-3)
     - [Commits](#commits)
     - [Pull Requests](#pull-requests)
     - [Code Reviews](#code-reviews)
@@ -476,7 +476,7 @@ let colour = "red"
 
 - Sometimes, things should be structs but need to conform to `AnyObject` or are historically modeled as classes already (`NSDate`, `NSSet`). Try to follow these guidelines as closely as possible.
 
-### Example definition
+#### Example definition
 
 Here's an example of a well-styled class definition:
 
@@ -551,7 +551,7 @@ class User
 
 ### Defining conditional statements
 - You must add the opening curly brace inline of the function name
-- You must put one space before conditional statement`.
+- You must put one space before conditional statement.
 - If you're comparing a boolean property you must not use "== true" statement
 
 **Preferred**:
