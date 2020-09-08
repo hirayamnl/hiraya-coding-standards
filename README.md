@@ -769,17 +769,17 @@ All source files must be encoded as UTF-8.
 	
 	If a source file contains only a single top-level class, the file name should reflect the case-sensitive name plus the `.kt` extension. Otherwise, if a source file contains multiple top-level declarations, choose a name that describes the contents of the file, apply PascalCase, and append the `.kt` extension.
 	```kotlin
-		// MyClass.kt  
+		// MyClass.kt
 		class MyClass { }
 	```
 	```kotlin
-		// Bar.kt  
-		class Bar { }  
+		// Bar.kt
+		class Bar { }
 		fun Runnable.toBar(): Bar = // …
 	```
 	```kotlin
-		// Map.kt  
-		fun <T, O> Set<T>.map(func: (T) -> O): List<O> = // …  
+		// Map.kt
+		fun <T, O> Set<T>.map(func: (T) -> O): List<O> = // …
 		fun <T, O> List<T>.map(func: (T) -> O): List<O> = // …
 	```
 	
@@ -950,12 +950,12 @@ All source files must be encoded as UTF-8.
 	```kotlin
 		try {
 			doSomething()  
-		} catch (e:  Exception) {} // WRONG!
+		} catch (e: Exception) {} // WRONG!
 	```
 	```kotlin
 		try {
 			doSomething()  
-		} catch (e:  Exception) {  
+		} catch (e: Exception) {  
 		} // Okay
 	```
 
@@ -975,7 +975,7 @@ All source files must be encoded as UTF-8.
 	```kotlin
 		val value = if (string.isEmpty()) { // Okay
 			0  
-		}  else  {
+		} else {
 			1  
 		}
 	```
@@ -1018,7 +1018,7 @@ All source files must be encoded as UTF-8.
 	```kotlin
 		fun <T> Iterable<T>.joinToString(
 			separator: CharSequence = ", ",
-			prefix:  \CharSequence = "",
+			prefix: \CharSequence = "",
 			postfix: CharSequence = ""  
 		): String {
 			// …  
@@ -1034,7 +1034,7 @@ All source files must be encoded as UTF-8.
 		}
 	```
 	```kotlin
-		override  fun toString():  String  =  "Hey"
+		override fun toString(): String = "Hey"
 	```
 	The only time an expression function should wrap to multiple lines is when it opens a block.
 	```kotlin
@@ -1113,7 +1113,7 @@ All source files must be encoded as UTF-8.
 		```
 		```kotlin
 			// Okay  
-			if (list.isEmpty())  {  
+			if (list.isEmpty()) {  
 			}
 		```
 	- On both sides of any binary operator.
@@ -1204,7 +1204,7 @@ All source files must be encoded as UTF-8.
 		```
 		```kotlin
 			// Okay  
-			class  Foo : Runnable
+			class Foo : Runnable
 		```
 	- On both sides of the double slash (`//`) that begins an end-of-line comment. Here, multiple spaces are allowed, but not required.
 		```kotlin
@@ -1251,14 +1251,14 @@ All source files must be encoded as UTF-8.
 	
 	Annotations without arguments can be placed on a single line.
 	```kotlin
-		@JvmField  @Volatile  
+		@JvmField @Volatile  
 		var disposable: Disposable? = null
 	```
 	When only a single annotation without arguments is present, it may be placed on the same line as the declaration.
 	```kotlin
-		@Volatile var disposable:  Disposable?  =  null  
+		@Volatile var disposable: Disposable? = null  
 		
-		@Test fun selectAll()  { 
+		@Test fun selectAll() { 
 			// …  
 		}
 	```
@@ -1279,7 +1279,7 @@ All source files must be encoded as UTF-8.
 	```kotlin
 		private val ICON: Icon = IconLoader.getIcon("/icons/kotlin.png")  
 		// becomes  
-		private  val ICON = IconLoader.getIcon("/icons/kotlin.png")
+		private val ICON = IconLoader.getIcon("/icons/kotlin.png")
 	```
 	When writing a library, retain the explicit type declaration when it is part of the public API.
 
@@ -1315,7 +1315,7 @@ All source files must be encoded as UTF-8.
 	  
 	Underscores are permitted to appear in test function names to separate logical components of the name.
 	```kotlin
-		@Test  fun pop_emptyStack() {
+		@Test fun pop_emptyStack() {
 			// …  
 		}
 	```
@@ -1351,7 +1351,7 @@ All source files must be encoded as UTF-8.
 
 	```kotlin
 		val variable = "var"  
-		val nonConstScalar =  non-const"  
+		val nonConstScalar = non-const"  
 		val mutableCollection: MutableSet = HashSet()  
 		val mutableElements = listOf(mutableInstance)  
 		val mutableValues = mapOf("Alice" to mutableInstance, "Bob" to mutableInstance2)  
@@ -1369,7 +1369,7 @@ All source files must be encoded as UTF-8.
 	  
 		val table: Map
 			get() {
-				if (_table == null)  {
+				if (_table == null) {
 					_table = HashMap()
 				}
 				return _table ?: throw AssertionError()
@@ -1422,7 +1422,7 @@ All source files must be encoded as UTF-8.
 		 * Multiple lines of KDoc text are written here,  
 		 * wrapped normally…  
 		 */  
-		fun method(arg: String)  {
+		fun method(arg: String) {
 			// …  
 		}
 	```
