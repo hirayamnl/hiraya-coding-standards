@@ -769,17 +769,17 @@ All source files must be encoded as UTF-8.
 	
 	If a source file contains only a single top-level class, the file name should reflect the case-sensitive name plus the `.kt` extension. Otherwise, if a source file contains multiple top-level declarations, choose a name that describes the contents of the file, apply PascalCase, and append the `.kt` extension.
 	```kotlin
-		// MyClass.kt  
+		// MyClass.kt
 		class MyClass { }
 	```
 	```kotlin
-		// Bar.kt  
-		class Bar { }  
+		// Bar.kt
+		class Bar { }
 		fun Runnable.toBar(): Bar = // …
 	```
 	```kotlin
-		// Map.kt  
-		fun <T, O> Set<T>.map(func: (T) -> O): List<O> = // …  
+		// Map.kt
+		fun <T, O> Set<T>.map(func: (T) -> O): List<O> = // …
 		fun <T, O> List<T>.map(func: (T) -> O): List<O> = // …
 	```
 	
@@ -950,12 +950,12 @@ All source files must be encoded as UTF-8.
 	```kotlin
 		try {
 			doSomething()  
-		} catch (e:  Exception) {} // WRONG!
+		} catch (e: Exception) {} // WRONG!
 	```
 	```kotlin
 		try {
 			doSomething()  
-		} catch (e:  Exception) {  
+		} catch (e: Exception) {  
 		} // Okay
 	```
 
@@ -975,7 +975,7 @@ All source files must be encoded as UTF-8.
 	```kotlin
 		val value = if (string.isEmpty()) { // Okay
 			0  
-		}  else  {
+		} else {
 			1  
 		}
 	```
@@ -1018,7 +1018,7 @@ All source files must be encoded as UTF-8.
 	```kotlin
 		fun <T> Iterable<T>.joinToString(
 			separator: CharSequence = ", ",
-			prefix:  \CharSequence = "",
+			prefix: CharSequence = "",
 			postfix: CharSequence = ""  
 		): String {
 			// …  
@@ -1034,7 +1034,7 @@ All source files must be encoded as UTF-8.
 		}
 	```
 	```kotlin
-		override  fun toString():  String  =  "Hey"
+		override fun toString(): String = "Hey"
 	```
 	The only time an expression function should wrap to multiple lines is when it opens a block.
 	```kotlin
@@ -1048,14 +1048,15 @@ All source files must be encoded as UTF-8.
 	
 	When a property initializer does not fit on a single line, break after the equals sign (`=`) and use an indent.
 	```kotlin
-		private val defaultCharset: Charset? = EncodingRegistry.getInstance().getDefaultCharsetForPropertiesFiles(file)
+		private val defaultCharset: Charset? = 
+		    EncodingRegistry.getInstance().getDefaultCharsetForPropertiesFiles(file)
 	```
 	Properties declaring a `get` and/or `set` function should place each on their own line with a normal indent (+4). Format them using the same rules as functions.
 	```kotlin
 		var directory: File? = null
-		set(value) {
-			// … 
-		}
+    		set(value) {
+    			// … 
+    		}
 	```
 	Read-only properties can use a shorter syntax which fits on a single line.
 	```kotlin
@@ -1113,7 +1114,7 @@ All source files must be encoded as UTF-8.
 		```
 		```kotlin
 			// Okay  
-			if (list.isEmpty())  {  
+			if (list.isEmpty()) {  
 			}
 		```
 	- On both sides of any binary operator.
@@ -1204,7 +1205,7 @@ All source files must be encoded as UTF-8.
 		```
 		```kotlin
 			// Okay  
-			class  Foo : Runnable
+			class Foo : Runnable
 		```
 	- On both sides of the double slash (`//`) that begins an end-of-line comment. Here, multiple spaces are allowed, but not required.
 		```kotlin
@@ -1251,14 +1252,14 @@ All source files must be encoded as UTF-8.
 	
 	Annotations without arguments can be placed on a single line.
 	```kotlin
-		@JvmField  @Volatile  
+		@JvmField @Volatile  
 		var disposable: Disposable? = null
 	```
 	When only a single annotation without arguments is present, it may be placed on the same line as the declaration.
 	```kotlin
-		@Volatile var disposable:  Disposable?  =  null  
+		@Volatile var disposable: Disposable? = null  
 		
-		@Test fun selectAll()  { 
+		@Test fun selectAll() { 
 			// …  
 		}
 	```
@@ -1279,7 +1280,7 @@ All source files must be encoded as UTF-8.
 	```kotlin
 		private val ICON: Icon = IconLoader.getIcon("/icons/kotlin.png")  
 		// becomes  
-		private  val ICON = IconLoader.getIcon("/icons/kotlin.png")
+		private val ICON = IconLoader.getIcon("/icons/kotlin.png")
 	```
 	When writing a library, retain the explicit type declaration when it is part of the public API.
 
@@ -1315,7 +1316,7 @@ All source files must be encoded as UTF-8.
 	  
 	Underscores are permitted to appear in test function names to separate logical components of the name.
 	```kotlin
-		@Test  fun pop_emptyStack() {
+		@Test fun pop_emptyStack() {
 			// …  
 		}
 	```
@@ -1350,12 +1351,12 @@ All source files must be encoded as UTF-8.
 	Non-constant names are written in camelCase. These apply to instance properties, local properties, and parameter names.
 
 	```kotlin
-		val variable = "var"  
-		val nonConstScalar =  non-const"  
-		val mutableCollection: MutableSet = HashSet()  
-		val mutableElements = listOf(mutableInstance)  
-		val mutableValues = mapOf("Alice" to mutableInstance, "Bob" to mutableInstance2)  
-		val logger = Logger.getLogger(MyClass::class.java.name)  
+        val variable = "var"
+		val nonConstScalar = "non-const"
+		val mutableCollection: MutableSet = HashSet()
+		val mutableElements = listOf(mutableInstance)
+		val mutableValues = mapOf("Alice" to mutableInstance, "Bob" to mutableInstance2)
+		val logger = Logger.getLogger(MyClass::class.java.name)
 		val nonEmptyArray = arrayOf("these", "can", "change")
 	```
 	
@@ -1369,7 +1370,7 @@ All source files must be encoded as UTF-8.
 	  
 		val table: Map
 			get() {
-				if (_table == null)  {
+				if (_table == null) {
 					_table = HashMap()
 				}
 				return _table ?: throw AssertionError()
@@ -1380,8 +1381,8 @@ All source files must be encoded as UTF-8.
 
 	Each type variable is named in one of two styles:
 	
-	- A single capital letter, optionally followed by a single numeral (such as  `E`,  `T`,  `X`,  `T2`)
-	- A name in the form used for classes, followed by the capital letter  `T`  (such as  `RequestT`,  `FooBarT`)
+	- A single capital letter, optionally followed by a single numeral (such as `E`, `T`, `X`, `T2`)
+	- A name in the form used for classes, followed by the capital letter `T` (such as  `RequestT`,  `FooBarT`)
 	
 	##### Camel case
 	Sometimes there is more than one reasonable way to convert an English phrase into camel case, such as when acronyms or unusual constructs like “IPv6” or “iOS” are present. To improve predictability, use the following scheme.
@@ -1422,7 +1423,7 @@ All source files must be encoded as UTF-8.
 		 * Multiple lines of KDoc text are written here,  
 		 * wrapped normally…  
 		 */  
-		fun method(arg: String)  {
+		fun method(arg: String) {
 			// …  
 		}
 	```
