@@ -74,6 +74,7 @@ You are not forced to religiously follow these standards. However, you are expec
 - You must put a trailing comma on the last element of an array.
 - Single responsibility principle must be followed.
 - There should always be a newline before the `return` statement.
+- For codes that are taken from StackOverflow, you must include a URL reference in the comment.
 
 **[⬆ back to top](#table-of-contents)**
 
